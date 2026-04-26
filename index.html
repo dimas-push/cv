@@ -1,71 +1,475 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dimas Lystianto - CV</title>
+    <meta name="description" content="Portfolio Dimas Lystianto - Admin Produksi & WMS Specialist dari Karawang, Jawa Barat.">
 
-    <link rel="stylesheet" href="css.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%236366f1'/><text y='.9em' font-size='70' x='50%' text-anchor='middle' font-family='monospace' font-weight='bold' fill='white'>D</text></svg>">
+
+    <!-- Open Graph / Social Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Dimas Lystianto | Portfolio">
+    <meta property="og:description" content="Admin Produksi & WMS Specialist dari Karawang, Jawa Barat. Berpengalaman di industri manufaktur otomotif.">
+    <meta property="og:image" content="image/BG.jpg">
+    <meta property="og:url" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dimas Lystianto | Portfolio">
+    <meta name="twitter:description" content="Admin Produksi & WMS Specialist dari Karawang, Jawa Barat.">
+    <meta name="twitter:image" content="image/BG.jpg">
+
+    <title>Dimas Lystianto | Portfolio</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <h1>Dimas Lystianto</h1>
-    </header>
+    <!-- ========== CURSOR ========== -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
 
-    <div class="container">
-
-        <section class="section contact-info">
-            <img src="cv/image/BG.jpg">
-        </section>
-
-        <section class="section">
-            <h2>Summary</h2>
-            <p>Lulusan Teknik Komputer Jaringan dengan pengalaman di sektor manufaktur. Berpengalaman dalam administrasi produksi, mengelola WMS untuk efisiensi gudang, serta merekap dan mengarsipkan dokumen penting. Terbiasa dengan perencanaan produksi dan audit operasional.</p>
-        </section>
-
-        <section class="section">
-            <h2>Work Experience</h2>
-            <h3>Admin Produksi (Kontrak) - PT. Honda Prospect Motor</h3>
-            <p>Karawang, Jawa Barat | Desember 2021 - September 2023</p>
-            <ul>
-                <li>Mengelola jadwal masuk dan keluar barang di gudang menggunakan WMS</li>
-                <li>Merekap dan mengarsipkan surat jalan serta dokumen terkait</li>
-                <li>Mengelola perencanaan produksi mingguan</li>
-                <li>Melakukan audit dua kali setahun menggunakan WMS</li>
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>DL<span class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fa-solid fa-moon" id="themeIcon"></i>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
 
-            <h3>Product Development Engineering (PKL) - PT. Aisin Nippon Gasket</h3>
-            <p>Karawang, Jawa Barat | Januari 2020 - Maret 2020</p>
-            <ul>
-                <li>Berperan aktif dalam rubbering dan pemasangan rubber dengan target 200 unit/hari</li>
-                <li>Membantu penyusunan Nominal Drawing untuk Head Cylinder Gasket</li>
-                <li>Mengelola Tabel Record Purchase Request dan Tabel Durability</li>
-                <li>Merekap dan mengarsipkan 100 dokumen terkait drawing</li>
-            </ul>
-        </section>
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="home">
+        <canvas id="particleCanvas"></canvas>
+        <div class="hero-content">
+            <p class="hero-greeting">Halo, saya 👋</p>
+            <h1 class="hero-name">Dimas <span class="gradient-text">Lystianto</span></h1>
+            <div class="hero-title">
+                <span class="title-prefix">Seorang </span>
+                <span class="typed-text" id="typedText"></span>
+                <span class="cursor-blink">|</span>
+            </div>
+            <p class="hero-desc">Lulusan Teknik Komputer Jaringan dengan pengalaman administrasi produksi &amp; WMS di industri manufaktur otomotif.</p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">
+                    <i class="fa-solid fa-rocket"></i> Lihat Proyek
+                </a>
+                <a href="#contact" class="btn btn-outline">
+                    <i class="fa-solid fa-paper-plane"></i> Hubungi Saya
+                </a>
+            </div>
+            <div class="hero-socials">
+                <a href="mailto:dimaslystianto11@gmail.com" aria-label="Email" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/dimaslystianto" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/dimaslystianto" target="_blank" rel="noopener" aria-label="GitHub" class="social-icon"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="avatar-wrapper">
+                <div class="avatar-ring ring-1"></div>
+                <div class="avatar-ring ring-2"></div>
+                <div class="avatar-ring ring-3"></div>
+                <img src="image/BG.jpg" alt="Foto Profil Dimas Lystianto" class="hero-avatar" loading="eager">
+                <div class="avatar-badge">
+                    <i class="fa-solid fa-circle-check"></i> Available
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator" id="scrollIndicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scroll</span>
+        </div>
+    </section>
 
-        <section class="section">
-            <h2>Skills</h2>
-            <ul>
-                <li>Microsoft Office</li>
-                <li>Warehouse Management System (WMS)</li>
-                <li>Google Workspace</li>
-                <li>Adobe Acrobat</li>
-                <li>Pengelolaan Dokumen Arsip</li>
-                <li>Komunikasi dan Kolaborasi</li>
-                <li>Manajemen Waktu</li>
-                <li>Memecahkan Masalah</li>
-            </ul>
-        </section>
+    <!-- ========== ABOUT ========== -->
+    <section class="section-wrap" id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">01. About</span>
+                <h2 class="section-title">Tentang Saya</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-image-wrap reveal">
+                    <div class="about-img-frame">
+                        <img src="image/BG.jpg" alt="Dimas Lystianto" class="about-img" loading="lazy">
+                        <div class="img-decoration"></div>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <span class="stat-num" data-target="2">0</span>+
+                            <span class="stat-label">Tahun Pengalaman</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-num" data-target="3">0</span>+
+                            <span class="stat-label">Perusahaan</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-num" data-target="100">0</span>+
+                            <span class="stat-label">Dokumen Diarsipkan</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text reveal">
+                    <h3>Admin Produksi &amp; WMS Specialist</h3>
+                    <p>Saya adalah lulusan <strong>Teknik Komputer Jaringan</strong> dari SMKN 1 Karawang dengan pengalaman kerja di industri manufaktur otomotif berskala internasional.</p>
+                    <p>Selama bekerja di <strong>PT. Honda Prospect Motor</strong>, saya mengelola sistem WMS untuk efisiensi gudang, mengelola dokumen produksi, dan melakukan audit operasional secara rutin.</p>
+                    <p>Saya terbiasa bekerja dengan target, detail, dan lingkungan yang cepat berubah. Saya percaya bahwa sistem yang baik dimulai dari dokumentasi yang rapi dan komunikasi yang jelas.</p>
+                    <div class="about-info">
+                        <div class="info-item">
+                            <i class="fa-solid fa-user"></i>
+                            <span><strong>Nama:</strong> Dimas Lystianto</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span><strong>Lokasi:</strong> Karawang, Jawa Barat</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span><strong>Email:</strong> dimaslystianto11@gmail.com</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-briefcase"></i>
+                            <span><strong>Status:</strong> <span class="available-badge">Tersedia untuk Kerja</span></span>
+                        </div>
+                    </div>
+                    <a href="cv/Dimas_Lystianto_CV.pdf" download class="btn btn-primary">
+                        <i class="fa-solid fa-download"></i> Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section class="section">
-            <h2>Education</h2>
-            <p>Teknik Komputer Jaringan - SMKN 1 Karawang (2018 - 2021)</p>
-        </section>
+    <!-- ========== SKILLS ========== -->
+    <section class="section-wrap section-alt" id="skills">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">02. Skills</span>
+                <h2 class="section-title">Keahlian</h2>
+            </div>
+            <div class="skills-layout">
+                <div class="skills-bars reveal">
+                    <h3 class="skills-group-title">Kemampuan Teknis</h3>
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-header">
+                            <span>Microsoft Office</span><span>90%</span>
+                        </div>
+                        <div class="skill-track"><div class="skill-fill" data-width="90"></div></div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-header">
+                            <span>Warehouse Management System</span><span>85%</span>
+                        </div>
+                        <div class="skill-track"><div class="skill-fill" data-width="85"></div></div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-header">
+                            <span>Google Workspace</span><span>80%</span>
+                        </div>
+                        <div class="skill-track"><div class="skill-fill" data-width="80"></div></div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-header">
+                            <span>Adobe Acrobat</span><span>75%</span>
+                        </div>
+                        <div class="skill-track"><div class="skill-fill" data-width="75"></div></div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-header">
+                            <span>Pengelolaan Dokumen Arsip</span><span>90%</span>
+                        </div>
+                        <div class="skill-track"><div class="skill-fill" data-width="90"></div></div>
+                    </div>
+                </div>
+                <div class="skills-cards reveal">
+                    <h3 class="skills-group-title">Kemampuan Umum</h3>
+                    <div class="soft-skills-grid">
+                        <div class="soft-card">
+                            <i class="fa-solid fa-people-group"></i>
+                            <span>Komunikasi &amp; Kolaborasi</span>
+                        </div>
+                        <div class="soft-card">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                            <span>Manajemen Waktu</span>
+                        </div>
+                        <div class="soft-card">
+                            <i class="fa-solid fa-lightbulb"></i>
+                            <span>Pemecahan Masalah</span>
+                        </div>
+                        <div class="soft-card">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <span>Perencanaan Produksi</span>
+                        </div>
+                        <div class="soft-card">
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+                            <span>Audit Operasional</span>
+                        </div>
+                        <div class="soft-card">
+                            <i class="fa-solid fa-folder-tree"></i>
+                            <span>Arsip &amp; Dokumentasi</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    </div>
+    <!-- ========== EXPERIENCE ========== -->
+    <section class="section-wrap" id="experience">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">03. Experience</span>
+                <h2 class="section-title">Pengalaman</h2>
+            </div>
+            <div class="timeline">
 
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="timeline-date">Des 2021 – Sep 2023</div>
+                        <h3 class="timeline-role">Admin Produksi <span class="badge-contract">Kontrak</span></h3>
+                        <p class="timeline-company">
+                            <i class="fa-solid fa-building"></i> PT. Honda Prospect Motor
+                            <span class="timeline-loc"><i class="fa-solid fa-location-dot"></i> Karawang, Jawa Barat</span>
+                        </p>
+                        <ul class="timeline-list">
+                            <li>Mengelola jadwal masuk dan keluar barang di gudang menggunakan WMS</li>
+                            <li>Merekap dan mengarsipkan surat jalan serta dokumen terkait</li>
+                            <li>Mengelola perencanaan produksi mingguan</li>
+                            <li>Melakukan audit dua kali setahun menggunakan WMS</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>WMS</span><span>Admin</span><span>Audit</span><span>Produksi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot">
+                        <i class="fa-solid fa-flask"></i>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="timeline-date">Jan 2020 – Mar 2020</div>
+                        <h3 class="timeline-role">Product Development Engineering <span class="badge-pkl">PKL</span></h3>
+                        <p class="timeline-company">
+                            <i class="fa-solid fa-building"></i> PT. Aisin Nippon Gasket
+                            <span class="timeline-loc"><i class="fa-solid fa-location-dot"></i> Karawang, Jawa Barat</span>
+                        </p>
+                        <ul class="timeline-list">
+                            <li>Berperan aktif dalam rubbering dan pemasangan rubber dengan target 200 unit/hari</li>
+                            <li>Membantu penyusunan Nominal Drawing untuk Head Cylinder Gasket</li>
+                            <li>Mengelola Tabel Record Purchase Request dan Tabel Durability</li>
+                            <li>Merekap dan mengarsipkan 100 dokumen terkait drawing</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>Engineering</span><span>Drawing</span><span>Dokumentasi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot edu">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="timeline-date">2018 – 2021</div>
+                        <h3 class="timeline-role">Teknik Komputer Jaringan</h3>
+                        <p class="timeline-company">
+                            <i class="fa-solid fa-school"></i> SMKN 1 Karawang
+                            <span class="timeline-loc"><i class="fa-solid fa-location-dot"></i> Karawang, Jawa Barat</span>
+                        </p>
+                        <ul class="timeline-list">
+                            <li>Mempelajari jaringan komputer, sistem operasi, dan administrasi server</li>
+                            <li>Praktek kerja lapangan di PT. Aisin Nippon Gasket</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>Networking</span><span>IT</span><span>Komputer</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROJECTS ========== -->
+    <section class="section-wrap section-alt" id="projects">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">04. Projects</span>
+                <h2 class="section-title">Proyek</h2>
+            </div>
+            <div class="projects-grid">
+
+                <div class="project-card reveal">
+                    <div class="project-card-top">
+                        <div class="project-icon"><i class="fa-solid fa-warehouse"></i></div>
+                        <div class="project-links">
+                            <span class="project-link-placeholder" title="Repositori belum tersedia"><i class="fa-brands fa-github"></i></span>
+                            <span class="project-link-placeholder" title="Link belum tersedia"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Sistem Manajemen Gudang</h3>
+                    <p class="project-desc">Pengelolaan WMS untuk mengatur jadwal masuk-keluar barang, audit stok, dan pelaporan produksi mingguan di PT. Honda Prospect Motor.</p>
+                    <div class="project-tech">
+                        <span>WMS</span><span>Excel</span><span>Reporting</span>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" style="--delay: 0.1s">
+                    <div class="project-card-top">
+                        <div class="project-icon"><i class="fa-solid fa-file-lines"></i></div>
+                        <div class="project-links">
+                            <span class="project-link-placeholder" title="Repositori belum tersedia"><i class="fa-brands fa-github"></i></span>
+                            <span class="project-link-placeholder" title="Link belum tersedia"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Sistem Arsip Dokumen</h3>
+                    <p class="project-desc">Pengarsipan dan rekapitulasi 100+ dokumen drawing, surat jalan, dan purchase request menggunakan Microsoft Office dan Adobe Acrobat.</p>
+                    <div class="project-tech">
+                        <span>MS Office</span><span>Adobe Acrobat</span><span>Arsip</span>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" style="--delay: 0.2s">
+                    <div class="project-card-top">
+                        <div class="project-icon"><i class="fa-solid fa-chart-gantt"></i></div>
+                        <div class="project-links">
+                            <span class="project-link-placeholder" title="Repositori belum tersedia"><i class="fa-brands fa-github"></i></span>
+                            <span class="project-link-placeholder" title="Link belum tersedia"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Perencanaan Produksi Mingguan</h3>
+                    <p class="project-desc">Menyusun dan mengelola jadwal produksi mingguan, berkoordinasi dengan tim untuk memastikan target produksi terpenuhi.</p>
+                    <div class="project-tech">
+                        <span>Planning</span><span>Koordinasi</span><span>Excel</span>
+                    </div>
+                </div>
+
+                <div class="project-card reveal" style="--delay: 0.3s">
+                    <div class="project-card-top">
+                        <div class="project-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        <div class="project-links">
+                            <span class="project-link-placeholder" title="Repositori belum tersedia"><i class="fa-brands fa-github"></i></span>
+                            <span class="project-link-placeholder" title="Link belum tersedia"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Audit Operasional Gudang</h3>
+                    <p class="project-desc">Pelaksanaan audit dua kali setahun menggunakan WMS untuk memastikan akurasi stok dan kepatuhan prosedur operasional gudang.</p>
+                    <div class="project-tech">
+                        <span>WMS</span><span>Audit</span><span>Quality</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="section-wrap" id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">05. Contact</span>
+                <h2 class="section-title">Hubungi Saya</h2>
+            </div>
+            <div class="contact-layout">
+                <div class="contact-info reveal">
+                    <h3>Mari Terhubung!</h3>
+                    <p>Saya terbuka untuk peluang kerja baru maupun kolaborasi. Jangan ragu untuk menghubungi saya kapan saja.</p>
+                    <div class="contact-details">
+                        <a href="mailto:dimaslystianto11@gmail.com" class="contact-detail-item">
+                            <div class="contact-detail-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <span class="contact-detail-label">Email</span>
+                                <span class="contact-detail-value">dimaslystianto11@gmail.com</span>
+                            </div>
+                        </a>
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <span class="contact-detail-label">Lokasi</span>
+                                <span class="contact-detail-value">Karawang, Jawa Barat</span>
+                            </div>
+                        </div>
+                        <a href="https://www.linkedin.com/in/dimaslystianto" target="_blank" rel="noopener" class="contact-detail-item">
+                            <div class="contact-detail-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                            <div>
+                                <span class="contact-detail-label">LinkedIn</span>
+                                <span class="contact-detail-value">linkedin.com/in/dimaslystianto</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form reveal" id="contactForm" novalidate>
+                    <div class="form-group">
+                        <label for="name">Nama</label>
+                        <input type="text" id="name" placeholder="Nama Lengkap Anda" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="email@anda.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subjek</label>
+                        <input type="text" id="subject" placeholder="Perihal pesan Anda">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Pesan</label>
+                        <textarea id="message" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary full-width">
+                        <i class="fa-solid fa-paper-plane"></i> Kirim Pesan
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <a href="#home" class="nav-logo">
+                    <span class="logo-bracket">&lt;</span>DL<span class="logo-bracket">/&gt;</span>
+                </a>
+                <p class="footer-copy">&copy; <span id="footerYear"></span> Dimas Lystianto. Dibuat dengan <i class="fa-solid fa-heart" style="color:#ef4444"></i> di Karawang.</p>
+                <div class="footer-socials">
+                    <a href="mailto:dimaslystianto11@gmail.com" aria-label="Email" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/dimaslystianto" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://github.com/dimaslystianto" target="_blank" rel="noopener" aria-label="GitHub" class="social-icon"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button class="back-top" id="backTop" aria-label="Back to top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
